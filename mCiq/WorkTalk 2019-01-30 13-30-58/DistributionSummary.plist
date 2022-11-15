@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WorkTalk.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>4E353844D88F22B2D1ED0F2C67C5B434063EA758</string>
+				<key>dateExpires</key>
+				<string>2021. 12. 4.</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>9NWLBRPDE9.kr.go.hwaseong.workingtalk</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>9NWLBRPDE9</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>9NWLBRPDE9.kr.go.hwaseong.workingtalk</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>WorkTalk.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>208fb6cd-3837-47e5-bff1-e6996d4acb1b</string>
+				<key>name</key>
+				<string>hwaseong_workingtalk_inhouse_provisioning_20181205</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>9NWLBRPDE9</string>
+				<key>name</key>
+				<string>Hwaseong City</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

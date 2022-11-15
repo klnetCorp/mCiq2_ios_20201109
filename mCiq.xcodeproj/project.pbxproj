@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0877C79A61A542D8BBC50252 /* libPods-mCiq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEFF68A9289102C5398C914 /* libPods-mCiq.a */; };
+		8C1959939D7C08964FD48292 /* libPods-mCiqTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C70B793569883F4606882CA5 /* libPods-mCiqTests.a */; };
+		A297396A21FAADEC0018487D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A297396921FAADEC0018487D /* GoogleService-Info.plist */; };
 		A2A8779721F975F700190DBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A8779621F975F700190DBB /* AppDelegate.m */; };
 		A2A8779A21F975F700190DBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A8779921F975F700190DBB /* ViewController.m */; };
 		A2A8779D21F975F700190DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2A8779B21F975F700190DBB /* Main.storyboard */; };
@@ -16,6 +19,15 @@
 		A2A877A821F975F900190DBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A877A721F975F900190DBB /* main.m */; };
 		A2A877B221F975F900190DBB /* mCiqTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A877B121F975F900190DBB /* mCiqTests.m */; };
 		A2A877BD21F975F900190DBB /* mCiqUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A877BC21F975F900190DBB /* mCiqUITests.m */; };
+		A2C323AB224B522800A0B2A6 /* jpp.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C323AA224B522800A0B2A6 /* jpp.plist */; };
+		A2C323AE224B572300A0B2A6 /* intro.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C323AD224B572300A0B2A6 /* intro.png */; };
+		A2C323B2224B5D8500A0B2A6 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C323B0224B5D8500A0B2A6 /* OpenUDID.m */; };
+		A2C323B4224B63C900A0B2A6 /* dstprt.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C323B3224B63C900A0B2A6 /* dstprt.plist */; };
+		A2FF4A3721FADA82002CE0F6 /* autologin.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2FF4A3621FADA82002CE0F6 /* autologin.plist */; };
+		A2FF4A3B21FADC5B002CE0F6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FF4A3921FADC5B002CE0F6 /* MainViewController.m */; };
+		A2FF4A3C21FADC5B002CE0F6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FF4A3A21FADC5B002CE0F6 /* MainViewController.xib */; };
+		A2FF4A3F21FAE199002CE0F6 /* DataSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2FF4A3D21FAE199002CE0F6 /* DataSet.mm */; };
+		F2E8F0E9D5F3163D97E7D5B4 /* libPods-mCiqUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC7381C1CE3C697783C839D /* libPods-mCiqUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CDBEB7DB9E59EC547481A34 /* Pods-mCiqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCiqTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mCiqTests/Pods-mCiqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2AEFF68A9289102C5398C914 /* libPods-mCiq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCiq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D9465C17AD181ADEB57F37F /* Pods-mCiqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCiqTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mCiqTests/Pods-mCiqTests.release.xcconfig"; sourceTree = "<group>"; };
+		6D926AA9A938E72A9D6C35EC /* Pods-mCiqUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCiqUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mCiqUITests/Pods-mCiqUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8FC7381C1CE3C697783C839D /* libPods-mCiqUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCiqUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A297396921FAADEC0018487D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2A8779221F975F700190DBB /* mCiq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mCiq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A8779521F975F700190DBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A2A8779621F975F700190DBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +71,23 @@
 		A2A877B821F975F900190DBB /* mCiqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mCiqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A877BC21F975F900190DBB /* mCiqUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mCiqUITests.m; sourceTree = "<group>"; };
 		A2A877BE21F975F900190DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2C323AA224B522800A0B2A6 /* jpp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jpp.plist; sourceTree = "<group>"; };
+		A2C323AD224B572300A0B2A6 /* intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro.png; sourceTree = "<group>"; };
+		A2C323B0224B5D8500A0B2A6 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		A2C323B1224B5D8500A0B2A6 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		A2C323B3224B63C900A0B2A6 /* dstprt.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dstprt.plist; sourceTree = "<group>"; };
+		A2D27296226D481700DBC6A5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A2FF4A3621FADA82002CE0F6 /* autologin.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = autologin.plist; sourceTree = "<group>"; };
+		A2FF4A3821FADC5B002CE0F6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A2FF4A3921FADC5B002CE0F6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		A2FF4A3A21FADC5B002CE0F6 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		A2FF4A3D21FAE199002CE0F6 /* DataSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DataSet.mm; sourceTree = "<group>"; };
+		A2FF4A3E21FAE199002CE0F6 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
+		A2FF4A4021FAE634002CE0F6 /* mCiq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mCiq.entitlements; sourceTree = "<group>"; };
+		B2A179CDF44BFCC9E0E42EA9 /* Pods-mCiq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCiq.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mCiq/Pods-mCiq.debug.xcconfig"; sourceTree = "<group>"; };
+		BA1BC391F1988F55C57BCF19 /* Pods-mCiq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCiq.release.xcconfig"; path = "Pods/Target Support Files/Pods-mCiq/Pods-mCiq.release.xcconfig"; sourceTree = "<group>"; };
+		C70B793569883F4606882CA5 /* libPods-mCiqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mCiqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3CF4DCD1E11EF9052F2FDF9 /* Pods-mCiqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCiqUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mCiqUITests/Pods-mCiqUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0877C79A61A542D8BBC50252 /* libPods-mCiq.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1959939D7C08964FD48292 /* libPods-mCiqTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +111,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E8F0E9D5F3163D97E7D5B4 /* libPods-mCiqUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75610071296850AA7BEFA665 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2D27296226D481700DBC6A5 /* WebKit.framework */,
+				2AEFF68A9289102C5398C914 /* libPods-mCiq.a */,
+				C70B793569883F4606882CA5 /* libPods-mCiqTests.a */,
+				8FC7381C1CE3C697783C839D /* libPods-mCiqUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2A8778921F975F700190DBB = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +136,8 @@
 				A2A877B021F975F900190DBB /* mCiqTests */,
 				A2A877BB21F975F900190DBB /* mCiqUITests */,
 				A2A8779321F975F700190DBB /* Products */,
+				D1298E6DD26BDEFB3AC327B3 /* Pods */,
+				75610071296850AA7BEFA665 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,8 +154,15 @@
 		A2A8779421F975F700190DBB /* mCiq */ = {
 			isa = PBXGroup;
 			children = (
+				A2C323AF224B5D7500A0B2A6 /* UDID */,
+				A2FF4A4021FAE634002CE0F6 /* mCiq.entitlements */,
+				A297396921FAADEC0018487D /* GoogleService-Info.plist */,
+				A2C323AC224B56F900A0B2A6 /* img */,
+				A2C323AA224B522800A0B2A6 /* jpp.plist */,
 				A2A8779521F975F700190DBB /* AppDelegate.h */,
 				A2A8779621F975F700190DBB /* AppDelegate.m */,
+				A2FF4A3E21FAE199002CE0F6 /* DataSet.h */,
+				A2FF4A3D21FAE199002CE0F6 /* DataSet.mm */,
 				A2A8779821F975F700190DBB /* ViewController.h */,
 				A2A8779921F975F700190DBB /* ViewController.m */,
 				A2A8779B21F975F700190DBB /* Main.storyboard */,
@@ -113,6 +171,11 @@
 				A2A877A621F975F900190DBB /* Info.plist */,
 				A2A877A721F975F900190DBB /* main.m */,
 				A2A8779E21F975F700190DBB /* mCiq.xcdatamodeld */,
+				A2FF4A3621FADA82002CE0F6 /* autologin.plist */,
+				A2FF4A3821FADC5B002CE0F6 /* MainViewController.h */,
+				A2FF4A3921FADC5B002CE0F6 /* MainViewController.m */,
+				A2FF4A3A21FADC5B002CE0F6 /* MainViewController.xib */,
+				A2C323B3224B63C900A0B2A6 /* dstprt.plist */,
 			);
 			path = mCiq;
 			sourceTree = "<group>";
@@ -135,6 +198,36 @@
 			path = mCiqUITests;
 			sourceTree = "<group>";
 		};
+		A2C323AC224B56F900A0B2A6 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				A2C323AD224B572300A0B2A6 /* intro.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		A2C323AF224B5D7500A0B2A6 /* UDID */ = {
+			isa = PBXGroup;
+			children = (
+				A2C323B1224B5D8500A0B2A6 /* OpenUDID.h */,
+				A2C323B0224B5D8500A0B2A6 /* OpenUDID.m */,
+			);
+			path = UDID;
+			sourceTree = "<group>";
+		};
+		D1298E6DD26BDEFB3AC327B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2A179CDF44BFCC9E0E42EA9 /* Pods-mCiq.debug.xcconfig */,
+				BA1BC391F1988F55C57BCF19 /* Pods-mCiq.release.xcconfig */,
+				0CDBEB7DB9E59EC547481A34 /* Pods-mCiqTests.debug.xcconfig */,
+				4D9465C17AD181ADEB57F37F /* Pods-mCiqTests.release.xcconfig */,
+				6D926AA9A938E72A9D6C35EC /* Pods-mCiqUITests.debug.xcconfig */,
+				F3CF4DCD1E11EF9052F2FDF9 /* Pods-mCiqUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +235,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2A877C121F975F900190DBB /* Build configuration list for PBXNativeTarget "mCiq" */;
 			buildPhases = (
+				2ACDC923BB1AF1ACAEDE2E55 /* [CP] Check Pods Manifest.lock */,
 				A2A8778E21F975F700190DBB /* Sources */,
 				A2A8778F21F975F700190DBB /* Frameworks */,
 				A2A8779021F975F700190DBB /* Resources */,
+				B362AD0E8869A25735D6BCF6 /* [CP] Embed Pods Frameworks */,
+				5FA778D2052533EEA59B30C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,9 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2A877C421F975F900190DBB /* Build configuration list for PBXNativeTarget "mCiqTests" */;
 			buildPhases = (
+				C183C0B06DCD1486A1EFDD97 /* [CP] Check Pods Manifest.lock */,
 				A2A877A921F975F900190DBB /* Sources */,
 				A2A877AA21F975F900190DBB /* Frameworks */,
 				A2A877AB21F975F900190DBB /* Resources */,
+				659B31FE69724947AD2DFEB7 /* [CP] Embed Pods Frameworks */,
+				7BC15C68572B981B9A6605A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2A877C721F975F900190DBB /* Build configuration list for PBXNativeTarget "mCiqUITests" */;
 			buildPhases = (
+				1BD6E48297758A9EE12716D0 /* [CP] Check Pods Manifest.lock */,
 				A2A877B421F975F900190DBB /* Sources */,
 				A2A877B521F975F900190DBB /* Frameworks */,
 				A2A877B621F975F900190DBB /* Resources */,
+				21B28DD7C530351FAF30BBFC /* [CP] Embed Pods Frameworks */,
+				EDC160CADC701ABCD45342C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +304,14 @@
 				TargetAttributes = {
 					A2A8779121F975F700190DBB = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A2A877AC21F975F900190DBB = {
 						CreatedOnToolsVersion = 9.3;
@@ -238,9 +348,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C323AE224B572300A0B2A6 /* intro.png in Resources */,
 				A2A877A521F975F900190DBB /* LaunchScreen.storyboard in Resources */,
+				A2FF4A3C21FADC5B002CE0F6 /* MainViewController.xib in Resources */,
+				A2C323B4224B63C900A0B2A6 /* dstprt.plist in Resources */,
+				A2FF4A3721FADA82002CE0F6 /* autologin.plist in Resources */,
+				A297396A21FAADEC0018487D /* GoogleService-Info.plist in Resources */,
 				A2A877A221F975F900190DBB /* Assets.xcassets in Resources */,
 				A2A8779D21F975F700190DBB /* Main.storyboard in Resources */,
+				A2C323AB224B522800A0B2A6 /* jpp.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +376,153 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BD6E48297758A9EE12716D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mCiqUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21B28DD7C530351FAF30BBFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mCiqUITests/Pods-mCiqUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ACDC923BB1AF1ACAEDE2E55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mCiq-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FA778D2052533EEA59B30C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mCiq/Pods-mCiq-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		659B31FE69724947AD2DFEB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mCiqTests/Pods-mCiqTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BC15C68572B981B9A6605A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mCiqTests/Pods-mCiqTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B362AD0E8869A25735D6BCF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mCiq/Pods-mCiq-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C183C0B06DCD1486A1EFDD97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mCiqTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDC160CADC701ABCD45342C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mCiqUITests/Pods-mCiqUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A2A8778E21F975F700190DBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,7 +530,10 @@
 			files = (
 				A2A877A021F975F700190DBB /* mCiq.xcdatamodeld in Sources */,
 				A2A8779A21F975F700190DBB /* ViewController.m in Sources */,
+				A2FF4A3F21FAE199002CE0F6 /* DataSet.mm in Sources */,
+				A2C323B2224B5D8500A0B2A6 /* OpenUDID.m in Sources */,
 				A2A877A821F975F900190DBB /* main.m in Sources */,
+				A2FF4A3B21FADC5B002CE0F6 /* MainViewController.m in Sources */,
 				A2A8779721F975F700190DBB /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +595,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -355,12 +621,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				EXCLUDED_ARCHS = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -374,7 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -387,7 +654,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -413,12 +680,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				EXCLUDED_ARCHS = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -426,8 +694,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -435,40 +704,59 @@
 		};
 		A2A877C221F975F900190DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2A179CDF44BFCC9E0E42EA9 /* Pods-mCiq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UY3AVXPNNN;
+				CODE_SIGN_ENTITLEMENTS = mCiq/mCiq.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = BETFGY29Z7;
 				INFOPLIST_FILE = mCiq/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.klnet.mciq2.mCiq;
+				MARKETING_VERSION = 1.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.klnet.mciq2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2b166f2d-0ad5-4540-aff6-188c4276d472";
+				PROVISIONING_PROFILE_SPECIFIER = newmCiq;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		A2A877C321F975F900190DBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA1BC391F1988F55C57BCF19 /* Pods-mCiq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UY3AVXPNNN;
+				CODE_SIGN_ENTITLEMENTS = mCiq/mCiq.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = BETFGY29Z7;
 				INFOPLIST_FILE = mCiq/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.klnet.mciq2.mCiq;
+				MARKETING_VERSION = 1.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.klnet.mciq2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25913416-cc31-4fbf-a6d3-39b7b1f45fa6";
+				PROVISIONING_PROFILE_SPECIFIER = newmCiq;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		A2A877C521F975F900190DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CDBEB7DB9E59EC547481A34 /* Pods-mCiqTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +776,7 @@
 		};
 		A2A877C621F975F900190DBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D9465C17AD181ADEB57F37F /* Pods-mCiqTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +796,7 @@
 		};
 		A2A877C821F975F900190DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D926AA9A938E72A9D6C35EC /* Pods-mCiqUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UY3AVXPNNN;
@@ -525,6 +815,7 @@
 		};
 		A2A877C921F975F900190DBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3CF4DCD1E11EF9052F2FDF9 /* Pods-mCiqUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UY3AVXPNNN;

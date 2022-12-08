@@ -72,10 +72,20 @@ static BOOL diagStat2 = NO;
     NSDictionary *jsonResults = [NSJSONSerialization JSONObjectWithData:lookupResults options:0 error:nil];
     
     NSUInteger resultCount = [[jsonResults objectForKey:@"resultCount"] integerValue];
+    
+
     NSString *sSignHash = [self md5:MAIN_URL];
     NSString *getHash = [self sendDataToServer];
    
     BOOL rootingCheck = [self checkRooting];
+    [DataSet sharedDataSet].isMode = IS_MODE;
+    [DataSet sharedDataSet].mainURL = MAIN_URL;
+    [DataSet sharedDataSet].pushURL = PUSH_URL;
+    
+    if ([[DataSet sharedDataSet].isMode isEqualToString:@"D"]) {
+        //개발 테스트용은 앱스토어 배포가 아니므로 무조건 통과시킨다.
+        getHash = sSignHash;
+    }
     
     
     if(!rootingCheck) {
@@ -123,8 +133,10 @@ static BOOL diagStat2 = NO;
         NSDictionary *appDetails = [[jsonResults objectForKey:@"results"] firstObject];
         NSString *latestVersion = [appDetails objectForKey:@"version"];
         NSString *currentVersion = [bundleInfo objectForKey:@"CFBundleShortVersionString"];
+#if DEBUG
         NSLog(@"latestVersion====%@",latestVersion);
         NSLog(@"currentVersion====%@",currentVersion);
+#endif
         
         //앱스토어에 올라간 버전과 빌드버전이 다를경우 팝업을 출력한다.
         if(![latestVersion isEqualToString:currentVersion]){
@@ -157,21 +169,16 @@ static BOOL diagStat2 = NO;
         }
     }
     
-   
-    
-    
-    
-    
-    
+
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/login.jsp",MAIN_URL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1.0f];
+    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/login.jsp",mainURL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1.0f];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/login.jsp",MAIN_URL]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView01 loadRequest:request];
-    
+#if DEBUG
     NSLog(@"udid:%@", [OpenUDID value]);
- 
+#endif
 }
 
 
@@ -224,9 +231,15 @@ static BOOL diagStat2 = NO;
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
-    NSString *requestString = [[request URL] absoluteString];
-    NSLog(@"requestString : %@", requestString);
+    //접속경로
+    NSString *mainURL = [DataSet sharedDataSet].mainURL;
+    NSString *pushURL = [DataSet sharedDataSet].pushURL;
     
+    
+    NSString *requestString = [[request URL] absoluteString];
+#if DEBUG
+    NSLog(@"requestString : %@", requestString);
+#endif
     if ([requestString hasSuffix:@".pdf"] || [requestString hasSuffix:@".txt"] || [requestString hasSuffix:@".PDF"] || [requestString hasSuffix:@".TXT"] || [requestString hasSuffix:@".TEXT"] || [requestString hasSuffix:@".text"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:requestString]];
         return NO;
@@ -236,9 +249,10 @@ static BOOL diagStat2 = NO;
     if ([requestString hasPrefix:@"hybridappurlback://"]) {
         NSArray *jsDataArray = [requestString componentsSeparatedByString:@"hybridappurlback://"];
         NSString *jsString = [jsDataArray objectAtIndex:1];
-        
+#if DEBUG
         NSLog(@"urlback : %@", jsString);
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",MAIN_URL, jsString]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1.0f];
+#endif
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",mainURL, jsString]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1.0f];
         [webView01 loadRequest:request];
         
         return NO;
@@ -253,7 +267,7 @@ static BOOL diagStat2 = NO;
         
         if ([jsString1 isEqualToString:@"success"]) {
             [DataSet sharedDataSet].userid = jsString2;
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/main.jsp",MAIN_URL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:0.0f];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/main.jsp",mainURL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:0.0f];
             [webView01 loadRequest:request];
             [iv_intro setHidden:YES];
             [webView01 setHidden:NO];
@@ -303,9 +317,11 @@ static BOOL diagStat2 = NO;
         NSString *jsString2 = [jsDataArray objectAtIndex:1];
         NSString *jsString3 = [jsDataArray objectAtIndex:2];
         
+#if DEBUG
         NSLog(@"id : %@", jsString1);
         NSLog(@"isAutoLogin : %@", jsString2);
-        NSLog(@"pw : %@", jsString3);
+        NSLog(@"deviceId : %@", jsString3);
+#endif
         
         [DataSet sharedDataSet].userid = jsString1;
         
@@ -325,7 +341,8 @@ static BOOL diagStat2 = NO;
         NSMutableDictionary *authData = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
         
         [authData setObject:jsString1 forKey:@"vid"];
-        [authData setObject:jsString3 forKey:@"vpassword"];
+        //[authData setObject:jsString3 forKey:@"vpassword"];
+        [authData removeObjectForKey:@"vpassword"];
         
         if([jsString2 isEqualToString:@"Y"]) {
             [authData setObject:[NSNumber numberWithBool:YES] forKey:@"isautologin"];
@@ -363,7 +380,7 @@ static BOOL diagStat2 = NO;
         
         [webView01 stringByEvaluatingJavaScriptFromString:@"javascript:setPush('Y')"];
         
-        //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/main.jsp",MAIN_URL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1.0f];
+        //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/main.jsp",mainURL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:1.0f];
         
         //[webView01 loadRequest:request];
         return NO;
@@ -379,12 +396,18 @@ static BOOL diagStat2 = NO;
         NSNumber * nisAutoLogin = [authData objectForKey:@"isautologin"];
         Boolean isAutoLogin = [nisAutoLogin boolValue];
         NSString *vid = [authData objectForKey:@"vid"];
-        NSString *vpassword = [authData objectForKey:@"vpassword"];
+        //NSString *vpassword = [authData objectForKey:@"vpassword"];
+        NSString *deviceId = [OpenUDID value];
+        NSString *autoLoginYn = @"N";
+        if (isAutoLogin) {
+            autoLoginYn = @"Y";
+        }
         
-        if([DataSet sharedDataSet].isLogin && isAutoLogin && vid.length != 0 && vpassword.length != 0) {
-            
-            [webView01 stringByEvaluatingJavaScriptFromString:@"javascript:setIsAutoLogin('Y');"];
-            [webView01 stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"javascript:appAutoLogin('%@','%@');",vid, vpassword]];
+        [webView01 stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"javascript:setIsAutoLogin('%@', '%@','%@');",autoLoginYn, deviceId, vid]];
+        
+        if ([DataSet sharedDataSet].isLogin && isAutoLogin && vid.length != 0 && deviceId.length != 0) {
+            //[webView01 stringByEvaluatingJavaScriptFromString:@"javascript:setIsAutoLogin('Y');"];
+            [webView01 stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"javascript:appAutoLogin('%@','%@');",vid, deviceId]];
         }
         return NO;
     }
@@ -525,7 +548,7 @@ static BOOL diagStat2 = NO;
     if ([requestString hasPrefix:@"hybridappgoweburl://"]) {
         NSArray *jsDataArray = [requestString componentsSeparatedByString:@"hybridappgoweburl://"];
         NSString *url = [jsDataArray objectAtIndex:1];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",MAIN_URL, url]]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",mainURL, url]]];
         return NO;
     }
     
@@ -536,6 +559,29 @@ static BOOL diagStat2 = NO;
         NSString *appUrl = [NSString stringWithFormat:@"https://itunes.apple.com/kr/app/%@", url];
         NSLog(@"appUrl : %@", appUrl);
         [[UIApplication sharedApplication] openURL: [NSURL URLWithString:appUrl]];
+        return NO;
+    }
+    
+    if ([requestString hasPrefix:@"hybridsetchangemode://"]) {
+        NSArray *jsDataArray = [requestString componentsSeparatedByString:@"hybridsetchangemode://"];
+        NSString *jsString = [jsDataArray objectAtIndex:1];
+        
+        if ([[DataSet sharedDataSet].isMode isEqualToString:@"D"]) {
+            mainURL = MAIN_REAL_URL;
+            pushURL = PUSH_REAL_URL;
+            [DataSet sharedDataSet].isMode = @"P";
+        } else {
+            mainURL = MAIN_TEST_URL;
+            pushURL = PUSH_TEST_URL;
+            [DataSet sharedDataSet].isMode = @"D";
+        }
+        [DataSet sharedDataSet].mainURL = mainURL;
+        [DataSet sharedDataSet].pushURL = pushURL;
+        [DataSet sharedDataSet].isLogin = false;
+    
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",mainURL, jsString]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:0.0f];
+        [webView01 loadRequest:request];
+        
         return NO;
     }
     
@@ -578,7 +624,7 @@ static BOOL diagStat2 = NO;
         [dstprtData setObject:@"" forKey:@"dstPrtName"];
         [dstprtData writeToFile:path01 atomically:YES];
         
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",MAIN_URL, jsString]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:0.0f];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",mainURL, jsString]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:0.0f];
         [webView01 loadRequest:request];
         
         return NO;
@@ -596,8 +642,9 @@ static BOOL diagStat2 = NO;
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSString *currentURL = webView.request.URL.absoluteString;
+#if DEBUG
     NSLog(@"currentURL : %@",currentURL);
-    
+#endif
     NSRange range_login;
     range_login = [currentURL rangeOfString:@"/newmobile/login.jsp"];
     
@@ -611,12 +658,18 @@ static BOOL diagStat2 = NO;
         NSNumber * nisAutoLogin = [authData objectForKey:@"isautologin"];
         Boolean isAutoLogin = [nisAutoLogin boolValue];
         NSString *vid = [authData objectForKey:@"vid"];
-        NSString *vpassword = [authData objectForKey:@"vpassword"];
+        //NSString *vpassword = [authData objectForKey:@"vpassword"];
+        NSString *deviceId = [OpenUDID value];
+        NSString *autoLoginYn = @"N";
+        if (isAutoLogin) {
+            autoLoginYn = @"Y";
+        }
         
-        if(isAutoLogin && vid.length != 0 && vpassword.length != 0) {
-            
-            [webView01 stringByEvaluatingJavaScriptFromString:@"javascript:setIsAutoLogin('Y');"];
-            [webView01 stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"javascript:appAutoLogin('%@','%@');",vid, vpassword]];
+        [webView01 stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"javascript:setIsAutoLogin('%@', '%@','%@');",autoLoginYn, deviceId, vid]];
+        
+        if ([DataSet sharedDataSet].isLogin && isAutoLogin && vid.length != 0 && deviceId.length != 0) {
+            //[webView01 stringByEvaluatingJavaScriptFromString:@"javascript:setIsAutoLogin('Y');"];
+            [webView01 stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"javascript:appAutoLogin('%@','%@');",vid, deviceId]];
         } else {
             [iv_intro setHidden:YES];
             [webView01 setHidden:NO];
@@ -664,9 +717,14 @@ static BOOL diagStat2 = NO;
 - (NSString *)sendDataToServer{
     __block NSString *returnValue;
     
-    NSUInteger length = [MAIN_URL length];
+    
+    //접속경로
+    NSString *mainURL = [DataSet sharedDataSet].mainURL;
+    NSString *pushURL = [DataSet sharedDataSet].pushURL;
+    
+    NSUInteger length = [mainURL length];
 //     해시코드 서버로직 개발 완료시 도메인 수정
-       NSString *getURL = [NSString stringWithFormat:@"%@/newmobile/selectMobileHashKey.do?app_id=MCIQ&app_os=ios&app_version=%lu",MAIN_URL,(unsigned long)length];
+       NSString *getURL = [NSString stringWithFormat:@"%@/newmobile/selectMobileHashKey.do?app_id=MCIQ&app_os=ios&app_version=%lu",mainURL,(unsigned long)length];
     
     
     NSURL* url = [NSURL URLWithString:getURL];
@@ -735,10 +793,15 @@ static BOOL diagStat2 = NO;
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"error.code : %ld", (long)error.code);
+    
+    //접속경로
+    NSString *mainURL = [DataSet sharedDataSet].mainURL;
+    NSString *pushURL = [DataSet sharedDataSet].pushURL;
+    
     if(error.code == 999 || error.code == -999) {
         
     } else if(error.code == -1001 || error.code == 1001) {
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/main.jsp",MAIN_URL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:0.0f];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/newmobile/main.jsp",mainURL]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:0.0f];
         [webView01 loadRequest:request];
     } else {
         [iv_intro setHidden:YES];

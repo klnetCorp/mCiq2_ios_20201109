@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define IS_MODE @"D";  //초기접속모드 D-개발,P-운영
+#define IS_MODE @"P";  //초기접속모드 D-개발,P-운영
 #define MAIN_URL @"https://mciq.plism.com"
 #define MAIN_REAL_URL @"https://mciq.plism.com"
 #define MAIN_TEST_URL @"https://devmciq.plism.com"

@@ -73,14 +73,14 @@ static BOOL diagStat2 = NO;
     
     NSUInteger resultCount = [[jsonResults objectForKey:@"resultCount"] integerValue];
     
+    [DataSet sharedDataSet].isMode = IS_MODE;
+    [DataSet sharedDataSet].mainURL = MAIN_URL;
+    [DataSet sharedDataSet].pushURL = PUSH_URL;
 
     NSString *sSignHash = [self md5:MAIN_URL];
     NSString *getHash = [self sendDataToServer];
    
     BOOL rootingCheck = [self checkRooting];
-    [DataSet sharedDataSet].isMode = IS_MODE;
-    [DataSet sharedDataSet].mainURL = MAIN_URL;
-    [DataSet sharedDataSet].pushURL = PUSH_URL;
     
     if ([[DataSet sharedDataSet].isMode isEqualToString:@"D"]) {
         //개발 테스트용은 앱스토어 배포가 아니므로 무조건 통과시킨다.

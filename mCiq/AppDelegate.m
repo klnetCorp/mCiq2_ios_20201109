@@ -383,6 +383,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+    
+    //[2023.09.19 취약점조치] 캐시데이터 삭제
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    [NSURLCache sharedURLCache].diskCapacity = 0;
+    [NSURLCache sharedURLCache] .memoryCapacity = 0;
 }
 
 
